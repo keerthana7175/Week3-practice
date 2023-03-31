@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Midvalues {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.print("Enter the size of the first sample: ");// 6
+    int n1 = s.nextInt();
+
+    int[] sample1 = new int[n1];// [23,90,45,56,67,21]
+    System.out.println("Enter " + n1 + " values for the first sample:");
+    for (int i = 0; i < n1; i++) {
+      sample1[i] = s.nextInt();
+    }
+
+    System.out.print("Enter the size of the second sample: ");// 56
+    int n2 = s.nextInt();
+
+    int[] sample2 = new int[n2];// [23,90,45,56,67]
+    System.out.println("Enter " + n2 + " values for the second sample:");
+    for (int i = 0; i < n2; i++) {
+      sample2[i] = s.nextInt();
+    }
+
+    Arrays.sort(sample1);
+    Arrays.sort(sample2);
+
+    int mid1 = sample1[n1 / 2];
+    int mid2 = sample2[n2 / 2];
+
+    System.out.println("The middle element of the first sample is: " + mid1);
+    System.out.println("The middle element of the second sample is: " + mid2);
+  }
+}

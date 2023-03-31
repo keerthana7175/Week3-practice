@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Example29 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        System.out.println("Enter the values of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = input.nextInt();
+        }
+        System.out.print("Enter the integer to count: ");
+        int num = input.nextInt();
+        int count = 0;
+        for (int i : arr) {
+            if (i == num) {
+                count++;
+            }
+        }
+        System.out.println("The integer " + num + " appears " + count + " times in the array.");
+    }
+}

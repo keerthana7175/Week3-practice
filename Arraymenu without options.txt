@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class ArrayMenu {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+
+    System.out.print("Enter the size of the array: ");
+    int size = s.nextInt();
+    int[] arr = new int[size];
+
+    System.out.print("Enter the array elements: ");
+    for (int i = 0; i < size; i++) {
+      arr[i] = s.nextInt();
+    }
+
+    int max = arr[0];
+    int secondMax = arr[0];
+    int min = arr[0];
+    int secondMin = arr[0];
+    int total = 0;
+    int sumOfEven = 0;
+    int sumOfOdd = 0;
+    int numOdd = 0;
+
+    for (int i = 0; i < size; i++) {
+      if (arr[i] > max) {
+        secondMax = max;
+        max = arr[i];
+      } else if (arr[i] > secondMax) {
+        secondMax = arr[i];
+      }
+
+      if (arr[i] < min) {
+        secondMin = min;
+        min = arr[i];
+      } else if (arr[i] < secondMin) {
+        secondMin = arr[i];
+      }
+
+      total += arr[i];
+
+      if (arr[i] % 2 == 0) {
+        sumOfEven += arr[i];
+      } else {
+        sumOfOdd += arr[i];
+        numOdd++;
+      }
+    }
+
+    double average = (double) total / size;
+
+    System.out.println("Max: " + max);
+    System.out.println("Second max: " + secondMax);
+    System.out.println("Min: " + min);
+    System.out.println("Second min: " + secondMin);
+    System.out.println("Total: " + total);
+    System.out.println("Average: " + average);
+    System.out.println("Sum of even: " + sumOfEven);
+    System.out.println("Sum of odd: " + sumOfOdd);
+    System.out.println("Number of odd: " + numOdd);
+  }
+}

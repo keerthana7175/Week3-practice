@@ -1,0 +1,53 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayOperations {
+    public static void main(String[] args) {
+        int[] myArray = {5, 10, 15, 20, 25};
+        Scanner sc = new Scanner(System.in);
+        
+        // Insertion Operations
+        // Insert an element in the first index position
+        int[] newArray1 = new int[myArray.length+1];
+        System.arraycopy(myArray, 0, newArray1, 1, myArray.length);
+        System.out.print("Enter the element to insert at the first position: ");
+        int firstElement = sc.nextInt();
+        newArray1[0] = firstElement;
+        System.out.println("New array after inserting element at the first position: " + Arrays.toString(newArray1));
+        
+        // Insert an element in the last index position
+        int[] newArray2 = Arrays.copyOf(myArray, myArray.length+1);
+        System.out.print("Enter the element to insert at the last position: ");
+        int lastElement = sc.nextInt();
+        newArray2[newArray2.length-1] = lastElement;
+        System.out.println("New array after inserting element at the last position: " + Arrays.toString(newArray2));
+        
+        // Insert an element in a specific index position
+        int[] newArray3 = Arrays.copyOf(myArray, myArray.length+1);
+        System.out.print("Enter the element to insert: ");
+        int element = sc.nextInt();
+        System.out.print("Enter the index position to insert the element: ");
+        int index = sc.nextInt();
+        System.arraycopy(newArray3, index, newArray3, index+1, newArray3.length-index-1);
+        newArray3[index] = element;
+        System.out.println("New array after inserting element at index position " + index + ": " + Arrays.toString(newArray3));
+        
+        // Removal Operations
+        // Remove the first element
+        int[] newArray4 = Arrays.copyOfRange(myArray, 1, myArray.length);
+        System.out.println("New array after removing the first element: " + Arrays.toString(newArray4));
+        
+        // Remove the last element
+        int[] newArray5 = Arrays.copyOfRange(myArray, 0, myArray.length-1);
+        System.out.println("New array after removing the last element: " + Arrays.toString(newArray5));
+        
+        // Remove an element at a specific index position
+        System.out.print("Enter the index position of the element to remove: ");
+        int removeIndex = sc.nextInt();
+        int[] newArray6 = new int[myArray.length-1];
+        System.arraycopy(myArray, 0, newArray6, 0, removeIndex);
+        System.arraycopy(myArray, removeIndex+1, newArray6, removeIndex, myArray.length-removeIndex-1);
+        System.out.println("New array after removing element at index position " + removeIndex + ": " + Arrays.toString(newArray6));
+        
+        // Remove the first occurrence of a search element
+       

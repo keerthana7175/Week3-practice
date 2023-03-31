@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Array7 {
+  public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("enter the size of array:");
+    int size = s.nextInt();
+
+    int[] arr = new int[size];
+    int[] evenarr = new int[size];
+    int[] oddarr = new int[size];
+    int evenindx = 0;
+    int oddindx = 0;
+    System.out.println("enter the element of array:");
+    for (int i = 0; i < size; i++) {
+      arr[i] = s.nextInt();
+      if (arr[i] % 2 == 0) {
+        evenarr[evenindx] = arr[i];
+        evenindx++;
+
+      } else {
+        oddarr[oddindx] = arr[i];
+        oddindx++;
+      }
+    }
+    for(int i=o;i<evenindx;i++){
+    System.out.println("arr:" + arr[i]);
+    System.out.println("evenarr:" + evenarr);
+    System.out.println("oddarr:" + oddarr);
+
+  }
+}
